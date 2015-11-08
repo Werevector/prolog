@@ -18,3 +18,8 @@ evalexp([-|Ls], R, Tail):- evalexp(Ls, X, Tl1), evalexp(Tl1, Y, Tail), R is X - 
 evalexp([*|Ls], R, Tail):- evalexp(Ls, X, Tl1), evalexp(Tl1, Y, Tail), R is X * Y.
 evalexp([/|Ls], R, Tail):- evalexp(Ls, X, Tl1), evalexp(Tl1, Y, Tail), R is X / Y.
 evalexp([L|Ls], L, Ls).
+
+%Oppgave 3.
+%N = brett størrelse, Ant = antall brikker, Type = Type brikker, S = Svar alternativ produsert
+pl(N, Ant, Type, S):-
+
