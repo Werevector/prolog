@@ -22,6 +22,39 @@
    Unngå duplikater!
 */
 
-qksort()
-%qksort(PIV, L, SORTED):- 
-qksort(L, SORTED):-
+%tell([L|Ls], member):- L member Ls
+%tell([L|Ls], [T|Ls]).
+
+%ant([L|Ls],[B|Bs]):- \+ member(L, ant[Ls,B].
+
+eat(E, [E|Xs], R):- eat(E, Xs, R).
+eat(E, [X|Xs], R):- eat(E, Xs, [X|R]).  
+eat(E, [], R).
+
+cnt(_, [], 0).
+cnt(X, [X|XS], R1) :- cnt(X, XS, R2), R1 is R2 + 1, !.
+cnt(X, [_|YS], R) :- cnt(X, YS, R).
+
+
+/**
+%largerpart
+qksrtpart([X|Xs], PIV, LESS, [X|Rs]):- X > PIV, qksrtpart(Xs, PIV, LESS, Rs).
+qksrtpart([X|Xs], PIV, [X|Ls], LARGER):- X =< PIV, qksrtpart(Xs, PIV, LS, LARGER).
+qksrtpart([], PIV, [], []).
+
+partitionM([X|Xs],Y,[X|Ls],Rs) :-
+  X =< Y, partition(Xs,Y,Ls,Rs).
+partitionM([X|Xs],Y,Ls,[X|Rs]) :-
+  X > Y, partition(Xs,Y,Ls,Rs).
+partitionM([],Y,[],[]).
+
+qksrtappend([], Ys, Ys).
+qksrtappend([X|Xs], TAIL, [X|Zs]):- qksrtappend(Xs, TAIL, Zs). 
+
+qksort([L|Ls], K):-
+ qksrtpart(Ls, L ,Left, Right),
+ qksort(Left, Les),
+ qksort(Right, Ris),
+ qksrtappend(Les, [L|Ris],K).
+qksort([],[]).
+**/

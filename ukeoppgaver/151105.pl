@@ -1,7 +1,5 @@
-/*
+/**
 Vi minner om at neste uke blir det løsing av ukesoppgavene i forelesningene, i tillegg til de vanlige gruppetimene.
-
---
 
 1) Vi representerer rettede grafer som lister med kanter, nemlig, par K:M, der K er kilde- og M mål-node av kanten K:M. 
 F.eks. [a:b,b:c,c:a,c:d] representerer grafen:
@@ -24,7 +22,6 @@ posisjoner til venstre, f.eks.
 roter([a,b,c,d], 1, [b,c,d,a]).
 roter([a,b,c,d], 6, [c,d,a,b]).
 roter([a,b,c,d], 3, [d,a,b,c]).
-
 
 3) Definer predikat uendret(+L,+N,K) som holder dersom listen L
 forblir uendret når den roteres syklisk K posisjoner til
@@ -50,12 +47,11 @@ tilsvarer en definisjon
 der variabelen P instansieres først ved et kall til holder. 
 
 Definer predikat remD(+A,+P,B) som holder hvis
- liste B er den samme som listen A med alle P-duplikater fjernet,
+liste B er den samme som listen A med alle P-duplikater fjernet,
 der P er et binært predikat. To elementer x og y er P-duplikater
 dersom P(x,y) evaluerer til true. (Spesielt, et kall remD(A,=,B)
 skal gi i B dellisten av A uten vanlige duplikater, dvs. der ingen to
 elementer er like under =.)
-
 
 5) Definer predikat
 	queens(+N,X)
@@ -75,8 +71,6 @@ queen(4,X)).
 
 [Hint: Løsning paa hele oppgaven bør ikke ha mer enn ca. 15 klausuler.]
 
-
-
 Oppgaver fra Prolog Kompendiet 
 (unifikasjon og søketrær):
 
@@ -86,7 +80,7 @@ Oppgaver fra Prolog Kompendiet
   9)  4.1
 10)  4.2
 11)  4.3
-*/
+**/
 
 
 
